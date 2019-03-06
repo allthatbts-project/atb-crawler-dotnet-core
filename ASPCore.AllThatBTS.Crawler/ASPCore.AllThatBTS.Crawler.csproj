@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.38.0.1488" />
+    <PackageReference Include="NLog" Version="4.5.11" />
+    <PackageReference Include="NPoco" Version="3.9.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
+    <PackageReference Include="TimeZoneConverter" Version="2.5.1" />
+    <PackageReference Include="TweetinviAPI" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="1. Entities\" />
+    <Folder Include="3. Services\" />
+    <Folder Include="2. Repositories\" />
+    <Folder Include="0. Common\" />
+  </ItemGroup>
+
+</Project>
