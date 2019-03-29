@@ -6,19 +6,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="Google.Apis.YouTube.v3" Version="1.38.0.1488" />
+    <PackageReference Include="InstagramApiSharp" Version="1.3.4.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
     <PackageReference Include="NLog" Version="4.5.11" />
     <PackageReference Include="NPoco" Version="3.9.4" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.1" />
     <PackageReference Include="TimeZoneConverter" Version="2.5.1" />
     <PackageReference Include="TweetinviAPI" Version="4.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="0. Common\" />
-    <Folder Include="1. Entities\" />
-    <Folder Include="2. Repositories\" />
-    <Folder Include="3. Services\" />
+    <None Update="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SQL\SelectYoutubeData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SQL\UpsertInstagramData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SQL\UpsertTwitterData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SQL\InsertYoutubeData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SQL\UpdateYoutubeData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
