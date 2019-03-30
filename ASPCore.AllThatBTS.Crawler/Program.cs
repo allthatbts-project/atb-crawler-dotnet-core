@@ -16,51 +16,33 @@ using Tweetinvi.Parameters;
 
 namespace ASPCore.AllThatBTS.Crawler
 {
-
-    
     class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("Crawler Start....");
             #region Youtube API 호출
 
-            Console.WriteLine("Youtube Crawling Start....");
-            YoutubeService youtubeService = new YoutubeService();
-            List<string> channelIDList = AppConfiguration.YoutubeChannelId.Split(";").ToList();
-            int loopCount = AppConfiguration.YoutubeLoopCount;
+            //Console.WriteLine("Youtube Crawling Start....");
+            //YoutubeService youtubeService = new YoutubeService();
+            //List<string> channelIDList = AppConfiguration.YoutubeChannelId.Split(";").ToList();
+            //int loopCount = AppConfiguration.YoutubeLoopCount;
 
-            List<string> videoIdList = youtubeService.SetVideoListInChannel(channelIDList, loopCount);
-            youtubeService.SetInfoInVideoList(videoIdList);
+            //List<string> videoIdList = youtubeService.SetVideoListInChannel(channelIDList, loopCount);
+            //youtubeService.SetInfoInVideoList(videoIdList);
 
-            Console.WriteLine("Youtube Crawling End!");
+            //Console.WriteLine("Youtube Crawling End!");
             #endregion
 
             #region Twitter API 호출
-            //// Set up your credentials (https://apps.twitter.com)
-            //Auth.SetUserCredentials("Hoa9WW289WzEMAFbGFQrw9gLI",
-            //                        "KjMVnYH9AhHEhRV9VGwv8kY8DQLl5iT2VSryKzzzEgqbQtQ3N9",
-            //                        "800358379218616320-eCXlSIM8RR8GBZEQpQZfNvb5txUkUei",
-            //                        "KgB7jynItIR4qcSkkeFAEVxa4eMVxhP7Aycq6zqCWlEkL");
-
-            //// Publish the Tweet "Hello World" on your Timeline
-            //SearchTweetsParameters parameters = new SearchTweetsParameters("BTS_twt")
-            //{
-            //    SearchType = SearchResultType.Recent,
-            //    MaximumNumberOfResults = 100
-            //};
+            Console.WriteLine("Twitter Crawling Start....");
+            TwitterService twitterService = new TwitterService();
+            List<string> twitterIDList = twitterService.GetTwitterIdList();
 
 
-            //List<ITweet> tweets = Search.SearchTweets(parameters).ToList();
+            twitterService.SetTwitterDataByIds(twitterIDList);
 
-            //foreach (ITweet tweet in tweets)
-            //{
-            //    Console.WriteLine($"RetweetCount: count={tweet.RetweetCount}, username={tweet.CreatedBy.UserDTO.Name}, " +
-            //        $"tweetText: text={tweet.FullText}, hashTagList: list={String.Join(",", tweet.Hashtags)}");
-            //}
-
-            //Console.WriteLine(String.Format("Twts:\n{0}\n", String.Join("\n", tweets)));
+            Console.WriteLine("Twitter Crawling End!");
             #endregion
 
             #region Instagram API

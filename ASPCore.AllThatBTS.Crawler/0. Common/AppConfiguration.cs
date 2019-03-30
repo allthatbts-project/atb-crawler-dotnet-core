@@ -13,9 +13,19 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         public static string SqlDataConnection { get { return GetSqlConnection(); } }
         public static string JwtSecret { get { return GetJwtSecret(); } }
         public static string NLogPath { get { return GetNLogPath(); } }
+        #region Youtube Config
         public static string YoutubeAPIKey { get { return GetYoutubeAPIKey(); } }
         public static string YoutubeChannelId { get { return GetYoutubeChannelId(); } }
         public static int YoutubeLoopCount { get { return GetYoutubeLoopCount(); } }
+        #endregion
+
+        #region Twitter Config
+        public static string TwitterConsumerKey { get { return GetTwitterConsumerKey(); } }
+        public static string TwitterConsumerSecret { get { return GetTwitterConsumerSecret(); } }
+        public static string TwitterUserAccessToken { get { return GetTwitterUserAccessToken(); } }
+        public static string TwitterUserAccessSecret { get { return GetTwitterUserAccessSecret(); } }
+        public static string TwitterIds { get { return GetTwitterIds(); } }
+        #endregion
 
         private static IConfigurationSection AppSetting
         {
@@ -94,8 +104,26 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         {
             return Convert.ToInt16(AppSettingService.GetSection("YoutubeConfig")["loopCount"]);
         }
-
-
+        private static string GetTwitterConsumerKey()
+        {
+            return AppSettingService.GetSection("TwitterConfig")["TwitterConsumerKey"];
+        }
+        private static string GetTwitterConsumerSecret()
+        {
+            return AppSettingService.GetSection("TwitterConfig")["TwitterConsumerSecret"];
+        }
+        private static string GetTwitterUserAccessToken()
+        {
+            return AppSettingService.GetSection("TwitterConfig")["TwitterUserAccessToken"];
+        }
+        private static string GetTwitterUserAccessSecret()
+        {
+            return AppSettingService.GetSection("TwitterConfig")["TwitterUserAccessSecret"];
+        }
+        private static string GetTwitterIds()
+        {
+            return AppSettingService.GetSection("TwitterConfig")["TwitterIds"];
+        }
     }
 }
 

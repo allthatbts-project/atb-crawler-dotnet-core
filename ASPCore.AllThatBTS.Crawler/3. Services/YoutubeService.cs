@@ -8,7 +8,6 @@ using NLog;
 using NLog.Config;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ASPCore.AllThatBTS.Crawler.Services
 {
@@ -84,15 +83,15 @@ namespace ASPCore.AllThatBTS.Crawler.Services
                             }
                             pageToken = searchResponse.NextPageToken;
                         }
-                        logger.Info("/-----Channel ID : " + channelId + " Save End-----/");
+                        
                     }
                 }
                 logger.Info("/-----Youtube Service Save VideoList In Channel End! Saved Count : " + savedCount + " -----/");
-
+                logger.Info("/-----Channel Save End-----/");
             }
             catch (Exception e)
             {
-                logger.Error(e, "Youtube Service Step 2 Error");
+                logger.Error(e, "Youtube Service Step 1 Error");
             }
 
             return videoIdList;

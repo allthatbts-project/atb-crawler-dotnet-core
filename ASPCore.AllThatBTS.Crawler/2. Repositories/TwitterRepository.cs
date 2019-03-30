@@ -9,7 +9,7 @@ namespace ASPCore.AllThatBTS.Crawler.Repository
 {
     public class TwitterRepository : BaseRepository
     {
-        public int UpsertTwitterData(TwitterT twitterData)
+        public int InsertTwitterData(TwitterT twitterData)
         {
             string sql = SQLHelper.GetSqlByMethodName(MethodBase.GetCurrentMethod().Name);
 
