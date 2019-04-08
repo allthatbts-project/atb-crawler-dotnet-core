@@ -21,4 +21,3 @@ VALUES (
 	,(SELECT NOW())
 	,NULL
 )
-	

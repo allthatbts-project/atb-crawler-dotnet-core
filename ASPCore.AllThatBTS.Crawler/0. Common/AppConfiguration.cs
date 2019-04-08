@@ -13,6 +13,7 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         public static string SqlDataConnection { get { return GetSqlConnection(); } }
         public static string JwtSecret { get { return GetJwtSecret(); } }
         public static string NLogPath { get { return GetNLogPath(); } }
+        
         #region Youtube Config
         public static string YoutubeAPIKey { get { return GetYoutubeAPIKey(); } }
         public static string YoutubeChannelId { get { return GetYoutubeChannelId(); } }
@@ -25,6 +26,12 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         public static string TwitterUserAccessToken { get { return GetTwitterUserAccessToken(); } }
         public static string TwitterUserAccessSecret { get { return GetTwitterUserAccessSecret(); } }
         public static string TwitterIds { get { return GetTwitterIds(); } }
+        #endregion
+
+        #region Instagram Config
+        public static string InstagramApiUserName { get { return GetInstagramApiUserName(); } }
+        public static string InstagramApiPassword { get { return GetInstagramApiPassword(); } }
+        public static string InstagramUserNameList { get { return GetTargetUserName(); } }
         #endregion
 
         private static IConfigurationSection AppSetting
@@ -124,6 +131,20 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         {
             return AppSettingService.GetSection("TwitterConfig")["TwitterIds"];
         }
+        private static string GetInstagramApiUserName()
+        {
+            return AppSettingService.GetSection("InstagramConfig")["ApiUserName"];
+        }
+        private static string GetInstagramApiPassword()
+        {
+            return AppSettingService.GetSection("InstagramConfig")["ApiUserPassword"];
+        }
+        private static string GetTargetUserName()
+        {
+            return AppSettingService.GetSection("InstagramConfig")["UserName"];
+        }
+
+
     }
 }
 

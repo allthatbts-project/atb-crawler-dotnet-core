@@ -9,7 +9,7 @@ namespace ASPCore.AllThatBTS.Crawler.Repository
 {
     public class InstagramRepository : BaseRepository
     {
-        public int UpsertInstagramData(InstagramT InstagramData)
+        public int InsertInstagramData(InstagramT InstagramData)
         {
             string sql = SQLHelper.GetSqlByMethodName(MethodBase.GetCurrentMethod().Name);
 
@@ -18,7 +18,7 @@ namespace ASPCore.AllThatBTS.Crawler.Repository
                 INSTAGRAM_ID = InstagramData.InstagramId,
                 USER_NAME = InstagramData.UserName,
                 IMAGE_URL = InstagramData.ImageUrl,
-                URL = InstagramData.Url
+                URL = "https://www.instagram.com/p/" + InstagramData.Url
             };
 
             return Connection.Execute(sql, parameters);
