@@ -16,6 +16,10 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         public static string YoutubeAPIKey { get { return GetYoutubeAPIKey(); } }
         public static string YoutubeChannelId { get { return GetYoutubeChannelId(); } }
         public static int YoutubeLoopCount { get { return GetYoutubeLoopCount(); } }
+        public static string InstagramApiUserName { get { return GetInstagramApiUserName(); } }
+        public static string InstagramApiPassword { get { return GetInstagramApiPassword(); } }
+        public static string InstagramUserNameList { get { return GetTargetUserName(); } }
+
 
         private static IConfigurationSection AppSetting
         {
@@ -93,6 +97,21 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         private static int GetYoutubeLoopCount()
         {
             return Convert.ToInt16(AppSettingService.GetSection("YoutubeConfig")["loopCount"]);
+        }
+
+        private static string GetInstagramApiUserName()
+        {
+            return AppSettingService.GetSection("InstagramConfig")["ApiUserName"];
+        }
+
+        private static string GetInstagramApiPassword()
+        {
+            return AppSettingService.GetSection("InstagramConfig")["ApiUserPassword"];
+        }
+
+        private static string GetTargetUserName()
+        {
+            return AppSettingService.GetSection("InstagramConfig")["UserName"];
         }
 
 

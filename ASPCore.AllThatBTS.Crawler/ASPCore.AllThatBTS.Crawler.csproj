@@ -24,7 +24,7 @@
     <None Update="SQL\SelectYoutubeData.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="SQL\UpsertInstagramData.sql">
+    <None Update="SQL\InsertInstagramData.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="SQL\UpsertTwitterData.sql">
