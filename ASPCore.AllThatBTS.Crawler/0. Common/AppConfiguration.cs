@@ -106,19 +106,19 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         }
         private static string GetTwitterConsumerKey()
         {
-            return AppSettingService.GetSection("TwitterConfig")["TwitterConsumerKey"];
+            return AppSettingService.GetSection("TwitterConfig")["ConsumerKey"];
         }
         private static string GetTwitterConsumerSecret()
         {
-            return AppSettingService.GetSection("TwitterConfig")["TwitterConsumerSecret"];
+            return AppSettingService.GetSection("TwitterConfig")["ConsumerSecret"];
         }
         private static string GetTwitterUserAccessToken()
         {
-            return AppSettingService.GetSection("TwitterConfig")["TwitterUserAccessToken"];
+            return AppSettingService.GetSection("TwitterConfig")["UserAccessToken"];
         }
         private static string GetTwitterUserAccessSecret()
         {
-            return AppSettingService.GetSection("TwitterConfig")["TwitterUserAccessSecret"];
+            return AppSettingService.GetSection("TwitterConfig")["UserAccessSecret"];
         }
         private static string GetTwitterIds()
         {

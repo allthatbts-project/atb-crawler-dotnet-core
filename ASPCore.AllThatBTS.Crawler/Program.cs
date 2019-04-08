@@ -39,7 +39,6 @@ namespace ASPCore.AllThatBTS.Crawler
             TwitterService twitterService = new TwitterService();
             List<string> twitterIDList = twitterService.GetTwitterIdList();
 
-
             twitterService.SetTwitterDataByIds(twitterIDList);
 
             Console.WriteLine("Twitter Crawling End!");

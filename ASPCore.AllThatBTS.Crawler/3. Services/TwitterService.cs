@@ -45,18 +45,21 @@ namespace ASPCore.AllThatBTS.Crawler.Services
         {
             logger.Info("/-----Twitter Service Save Timelines In Ids Start-----/");
             int savedCount = 0;
+
+            UserTimelineParameters parameters = new UserTimelineParameters()
+            {
+                IncludeRTS = false,
+                MaximumNumberOfTweetsToRetrieve = 100,
+                ExcludeReplies = true
+            };
+
             try
             {
                 if (twitterIds.Count > 0)
                 {
                     foreach (string twitterId in twitterIds)
                     {
-                        //var userIdentifier = User.GetUserFromScreenName(twitterId);
-                        var userTimelineParameters = new UserTimelineParameters()
-                        {
-                            MaximumNumberOfTweetsToRetrieve = 10
-                        };
-                        var tweets = Timeline.GetUserTimeline(twitterId, userTimelineParameters);
+                        var tweets = User.GetUserFromScreenName(twitterId).GetUserTimeline(parameters);
 
                         foreach (var tweet in tweets)
                         {
@@ -72,15 +75,14 @@ namespace ASPCore.AllThatBTS.Crawler.Services
                             {
                                 TwitterId = tweet.IdStr,
                                 TweetText = tweet.FullText,
-                                hashTags = tweet.Hashtags.ToString(),
-                                AccountName = tweet.IdStr,
+                                hashTags = string.Join(" ", tweet.Hashtags),
+                                AccountName = tweet.CreatedBy.Name,
                                 RetweetCount = tweet.RetweetCount,
                                 Url = tweet.Url
                             };
                             twitterRepository.InsertTwitterData(entity);
 
                             savedCount++;
-                            break;
                         }
                     }
                 }

@@ -15,7 +15,7 @@ namespace ASPCore.AllThatBTS.Crawler.Repository
 
             var parameters = new
             {
-                TWEETER_ID = twitterData.TwitterId,
+                TWITTER_ID = twitterData.TwitterId,
                 ACCOUNT_NAME = twitterData.AccountName,
                 TWEET_TEXT = twitterData.TweetText,
                 HASHTAGS = twitterData.hashTags,
