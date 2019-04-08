@@ -71,6 +71,7 @@ namespace ASPCore.AllThatBTS.Crawler.Services
                                             YoutubeId = searchResult.Id.VideoId,
                                             ChannelName = searchResult.Snippet.ChannelTitle,
                                             Title = searchResult.Snippet.Title,
+                                            ThumbnailImageUrl = searchResult.Snippet.Thumbnails.High.Url,
                                             // Url은 DB Insert 할때 넣어주는 거로....
                                             /* Url = https://www.youtube.com/watch?v= + searchResult.Id.VideoId */
                                             PublishDatetime = searchResult.Snippet.PublishedAt

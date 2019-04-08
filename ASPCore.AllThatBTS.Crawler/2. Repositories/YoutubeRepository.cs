@@ -19,6 +19,7 @@ namespace ASPCore.AllThatBTS.Crawler.Repository
                 CHANNEL_NAME = youtubeData.ChannelName,
                 TITLE = youtubeData.Title,
                 PUBLISH_DT = youtubeData.PublishDatetime,
+                THUMBNAIL_IMG_URL = youtubeData.ThumbnailImageUrl,
                 URL = "https://www.youtube.com/watch?v=" + youtubeData.YoutubeId,
             };
 
