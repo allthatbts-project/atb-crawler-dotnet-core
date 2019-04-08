@@ -16,6 +16,8 @@ namespace ASPCore.AllThatBTS.Crawler.Entities
         public string ChannelName { get; set; }
         [Column("TITLE")]
         public string Title { get; set; }
+        [Column("THUMBNAIL_IMG_URL")]
+        public string ThumbnailImageUrl { get; set; }
         [Column("VIEW_CNT")]
         public ulong? ViewCount { get; set; }
         [Column("LIKE_CNT")]
