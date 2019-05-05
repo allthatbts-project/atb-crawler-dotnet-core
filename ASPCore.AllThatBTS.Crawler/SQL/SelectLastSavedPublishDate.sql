@@ -1,0 +1,4 @@
+﻿  SELECT PUBLISH_DT
+    FROM tb_youtube_data
+ORDER BY PUBLISH_DT DESC
+   LIMIT 1;

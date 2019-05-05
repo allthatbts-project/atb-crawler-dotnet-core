@@ -20,29 +20,30 @@ namespace ASPCore.AllThatBTS.Crawler
 
             List<string> videoIdList = youtubeService.SetVideoListInChannel(channelIDList, loopCount);
             youtubeService.SetInfoInVideoList(videoIdList);
+            youtubeService.SyncronizeVideoList(AppConfiguration.YoutubeSyncToDays);
 
             Console.WriteLine("Youtube Crawling End!");
             #endregion
 
             #region Twitter API 호출
-            Console.WriteLine("Twitter Crawling Start....");
-            TwitterService twitterService = new TwitterService();
-            List<string> twitterIDList = twitterService.GetTwitterIdList();
+            //Console.WriteLine("Twitter Crawling Start....");
+            //TwitterService twitterService = new TwitterService();
+            //List<string> twitterIDList = twitterService.GetTwitterIdList();
 
-            twitterService.SetTwitterDataByIds(twitterIDList);
+            //twitterService.SetTwitterDataByIds(twitterIDList);
 
-            Console.WriteLine("Twitter Crawling End!");
+            //Console.WriteLine("Twitter Crawling End!");
             #endregion
 
             #region Instagram API 호출
 
-            Console.WriteLine("Instagram Crawling Start....");
-            InstagramService instagramService = new InstagramService();
-            List<string> userNameList = AppConfiguration.InstagramUserNameList.Split(";").ToList();
+            //Console.WriteLine("Instagram Crawling Start....");
+            //InstagramService instagramService = new InstagramService();
+            //List<string> userNameList = AppConfiguration.InstagramUserNameList.Split(";").ToList();
 
-            instagramService.SetMediaListByUserName(userNameList);
+            //instagramService.SetMediaListByUserName(userNameList);
 
-            Console.WriteLine("Instagram Crawling End!");
+            //Console.WriteLine("Instagram Crawling End!");
             #endregion
 
             Console.ReadKey();

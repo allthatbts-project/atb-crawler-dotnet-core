@@ -18,6 +18,7 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         public static string YoutubeAPIKey { get { return GetYoutubeAPIKey(); } }
         public static string YoutubeChannelId { get { return GetYoutubeChannelId(); } }
         public static int YoutubeLoopCount { get { return GetYoutubeLoopCount(); } }
+        public static int YoutubeSyncToDays { get { return GetYoutubeSyncToDays(); } }
         #endregion
 
         #region Twitter Config
@@ -109,7 +110,11 @@ namespace ASPCore.AllThatBTS.Crawler.Common
         }
         private static int GetYoutubeLoopCount()
         {
-            return Convert.ToInt16(AppSettingService.GetSection("YoutubeConfig")["loopCount"]);
+            return Convert.ToInt16(AppSettingService.GetSection("YoutubeConfig")["LoopCount"]);
+        }
+        private static int GetYoutubeSyncToDays()
+        {
+            return Convert.ToInt16(AppSettingService.GetSection("YoutubeConfig")["SyncToDays"]);
         }
         private static string GetTwitterConsumerKey()
         {
